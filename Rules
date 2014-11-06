@@ -72,6 +72,8 @@ compile '*' do
   filter :erb if item[:is_dynamic]
   if 'md' == item[:extension]
     filter :kramdown, :auto_ids => false
+  elsif 'adoc' == item[:extension]
+    filter :asciidoctor
   end
   filter :admonition
   filter :remove_spacing_around_pre
@@ -83,7 +85,9 @@ compile '*' do
   layout '/default/'
 
   filter :add_toc
-  filter :colorize_syntax, :is_fullpage => true
+  if 'adoc' != item[:extension]
+    filter :colorize_syntax, :is_fullpage => true
+  end
   filter :relativize_paths, :type => :html
   filter :remove_smartness_from_kbd
   filter :fixup_whitespace

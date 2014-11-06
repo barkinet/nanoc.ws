@@ -1,3 +1,5 @@
+text_extensions: [ 'adoc', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'ms', 'mustache', 'php', 'rb', 'sass', 'scss', 'slim', 'txt', 'xhtml', 'xml' ]
+
 enable_output_diff: true
 
 prune:
